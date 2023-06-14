@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>posExhibition</title>
+</head>
+<body class="container">
+    <div style = "text-align :center;" onclick="window.location.reload();">
+        <img id="logo" src="./img/logo.png">
+        <hr>
+    </div>
+    <article class="start">
+        <div class="posTitle">
+            <p>제 1회 별조각 사진전시회</p>
+            <p id="posExplain">별조각 사진전시회에 오신 것을 환영합니다.<br> 해당 사진을 클릭하면 <a style="color: rgb(255, 0, 0);">사진 제목 및 설명</a>을 보실수 있습니다.</p>
+        </div>
+        <div class="section" onclick="toDetail(1);">
+            <img id="frame" src="./img/1.png">
+            <p id="fRank">1등 양혁진</p>
+        </div>
+        <div class="section" onclick="toDetail(2);">
+            <img id="frame" src="./img/2.png">
+            <p id="fRank">2등 박찬영</p>
+        </div>
+        <div class="section" onclick="toDetail(3);">
+            <img id="frame" src="./img/3.png">
+            <p id="fRank">3등 이나경</p>
+        </div>
+    </article>
+    <article class="detail">
+        <div class="dCenter">
+            <img id="dFrame" src="./img/gold.png">
+            <p id="rank">순위</p>
+        </div>
+        <p id="title">사진 제목</p>
+        <p id="explain">사진 설명</p>
+        <button id="difBtn" type="button" class="btn btn-secondary pt-3 pb-3"  onclick="window.location.reload();">다른 작품도 보러가기</button>
+    </article>
+    <footer>
+        <hr>
+        <br>
+        <p>Develop by 별조각 임원진</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        var p={
+            1:{"rank":"★ 1등 21학번 양혁진 ★", "img":"./img/1.png", "title":"다아아아아아알", "explain":"학교 옥상에서 직접 망원경을 설치하고 찍은 달 사진이다. 하늘에 구름이 많지 않고 날이 맑아서 선명한 달 사진을 찍을 수 있었다. 달이 계속 움직여서 몇분마다 망원경의 초점을 맞춰야돼서 번거로웠지만 그 과정 또한 재밌었다."},
+            2:{"rank":"★ 2등 22학번 박찬영 ★", "img":"./img/2.png", "title":"지구의 단짝친구 달 달 무슨 달 쟁반같이 둥근 달", "explain":"달은 매일 모양이 조금씩 바뀌고 있습니다. 그 이유는 달이 공전하기 때문인데요. 위 사진을 보시면 둥근 보름달인 것을 알 수 있는데요. 보름달은 매 음력 15일마다 하늘에서 사람들에게 둥근 모양으로 반겨주고 있습니다. 사진을 자세히 보시면 여드름처럼 조금한 구멍이 고르게 분포한 걸 보실 수 있을 겁니다. 이것은 크레이터입니다. 크레이터는 소행성 또는 혜성이 행성 표면에 부딪히면 형성됩니다. 저는 쥐꼬리만한 휴대용 카메라로 약 38만km(서울-부산 왕복 약 480번에 달하는 거리)에 달의 크레이터  까지 세밀하게 보인다는게 정말 놀랍지 않나요? 별조각 사진전을 신청하면서 사진을 통한 달의 구조와 날씨에 따라서도 사진에 비쳐지는 달에 색깔이 달라질 수 있고 망원경을 통해서 눈으로 봤을 때와 다른 생동감을 느껴서 정말 좋은 추억을 만들었습니다."},
+            3:{"rank":"★ 3등 21학번 이나경 ★", "img":"./img/3.png", "title":"담벼락 위의 보름달", "explain":"깜깜한 밤이 아닌 5~6시쯤 뿐이였는데도 보름달이 환하게 떠 있어서 나도 모르게 카메라로 달을 막 찍고 있었다. 사진을 보면 미묘하게 무지개도 같이 찍혀있어서 여태 찍었던 달 사진 중에 제일 맘에 들게 나온 것 같다. 저번 동아리 달 관측하는 날에 시간이 없어서 가지 못했는데 다음에 망원경으로 달 관측을 하게 된다면 꼭 참가해 달의 표면을 더 자세히 보고 싶어졌다."}
+        }
+        function toHome(){
+            $(".start").show();
+            $(".detail").hide();
+        }
+        function toDetail(i){
+            $(".start").hide();
+            $(".detail").show();
+            next(i);
+        }
+        function next(i){
+            $("#rank").html(p[i]["rank"]);
+            $("#dFrame").attr("src",p[i]["img"]);
+            $("#title").html(p[i]["title"]);
+            $("#explain").html(p[i]["explain"]);
+        }
+    </script>
+</body>
+</html>
