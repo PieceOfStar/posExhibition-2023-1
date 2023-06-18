@@ -22,8 +22,15 @@
     font-size: 16px;
 }
 
-#go{
+#go-1{
     margin-top: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#go-2{
+    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
